@@ -4,46 +4,25 @@ class Colors extends Component {
     constructor(props) {
         super(props);
         this.state = {
-          currentColor: "red"
+          currentColor: "none"
         };
       }
     
-    red = () => {
-      this.setState({
-        currentColor: "red",
-      });
-    };
-  
-    blue = () => {
-      this.setState({
-        currentColor: "blue",
-      });
-    };
-
-      
-    green = () => {
-      this.setState({
-        currentColor: "green",
-      });
-    };
-
-      
-    yellow = () => {
-      this.setState({
-        currentColor: "yellow",
-      });
-    };
+      changeSwitch = (e) => {
+        this.setState({
+          currentColor: e.target.id,
+        });
+      };
   
     render() {
-      let { currentColor } = this.state;
-      
+    
       return (
         <>
-        <button onClick={this.red}>Rouge</button>
-        <button onClick={this.blue}>Bleu</button>
-        <button onClick={this.green}>Vert</button>
-        <button onClick={this.yellow}>Jaune</button>
-        <p style={{color: currentColor}}>Couleur : {currentColor}</p>
+        <button id="red" onClick={this.changeSwitch}>Rouge</button>
+        <button id="blue" onClick={this.changeSwitch}>Bleu</button>
+        <button id="green" onClick={this.changeSwitch}>Vert</button>
+        <button id="yellow" onClick={this.changeSwitch}>Jaune</button>
+        <p style={{color: this.state.currentColor}}>Couleur : {this.state.currentColor}</p>
         </>
       );
     }
