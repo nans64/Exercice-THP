@@ -35,8 +35,7 @@ class Counter extends Component {
         <button onClick={this.increment}>+</button>
         <button onClick={this.decrement}>-</button>
         <button onClick={this.toggleModal}>Toggle modal</button>
-
-        <p>Compteur : {currentNumber}</p>
+        <Number />
         </>
       );
     }
